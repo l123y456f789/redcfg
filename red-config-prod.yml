@@ -1,0 +1,23 @@
+#该文件是默认加载，而且优先级比application.yml高
+server:
+  port: 9090
+  servlet:
+    context-path: /
+
+    
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git: #指定配置文件仓库的访问路径
+          uri: https://github.com/l123y456f789/redcfg
+            
+#eureka注册中心配置
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:1111/eureka    
